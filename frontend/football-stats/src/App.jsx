@@ -2,14 +2,20 @@ import { useState } from 'react'
 import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 import './App.css'
-import SearchBar from './components/search-bar'
+import Home from './pages/home-page'
+import StatsPage from './pages/stats-page'
+import {Routes, Route} from 'react-router-dom'
+
 
 function App() {
   const [count, setCount] = useState(0)
 
   return (
     <>
-    <SearchBar />
+      <Routes>
+        <Route path='/' element={<Home />} />
+        <Route path='/stats-page' element={<StatsPage />} />
+      </Routes>
     </>
   )
 }
